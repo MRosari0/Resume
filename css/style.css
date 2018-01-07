@@ -1,221 +1,579 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
 body,
 div,
 ul,
 li,
 p,
 h1,
-h2,
-h3,
-h4,
-h5,
 h6 {
-  padding: 0;
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-}
-
-.clear-fix {
-  overflow: auto;
-}
-
-.education-entry,
-.work-entry,
-.project-entry {
-  padding: 0 5%;
-}
-
-h1 {
-  font-size: 40px;
-  color: #f5a623;
-  line-height: 48px;
-  display: inline;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  color: #999;
-  line-height: 29px;
-  padding: 10px;
-}
-
-h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000;
-  line-height: 22px;
-}
-
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4a4a4a;
-  line-height: 17px;
+    padding: 0;
+    margin: 0;
 }
 
 h2,
 h3,
 h4,
 h5 {
-  padding: 10px 5%;
-
+    padding: 10px 5%;
+    margin: 0;
 }
 
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: left;
+h3 {
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #000;
+    line-height: 22px;
 }
 
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999;
-  line-height: 16px;
-  float: right;
-
+h4 {
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #4a4a4a;
+    line-height: 17px;
 }
 
 p {
-  font-size: 14px;
-  color: #333;
-  line-height: 21px;
+    color: #333;
+    line-height: 21px;
 }
 
 a {
-  color: #1199c3;
-  text-decoration: none;
-  margin-top: 10px;
-  display: block;
+    color: #005671;
+    text-decoration: none;
+    /*    margin-top: 10px;*/
+    display: block;
 }
 
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3;
-  line-height: 28px;
+body {
+  background-color: #f4f3f3;
 }
 
-#skills-h3 {
-  color: #f5ae23;
-  display: none;
-}
-
-.orange {
-  background-color: #f5ae23;
-}
-
-.orange-text {
-  color: #f5ae23;
-}
-
-.white-text {
-  font-weight: bold;
-  color: #fff;
-}
-
-.gray {
-  background-color: #f3f3f3;
-  padding-bottom: 10px;
-  clear: both;
-}
-
-.dark-gray {
-  background-color: #4a4a4a;
-}
-
-/* TODO: Replace with image later */
-#header {
-  background-color: #484848;
-}
-
-.flex-box {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  padding: 10px;
-}
-
-.center-content {
-  padding: 2.5% 5%;
-}
-
-ul {
-  list-style-type: none;
-}
-
-.biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: none;
+hr {
+    width: 100%;
+    border-top: 1px solid white;
 }
 
 img {
-  padding: 10px;
+    padding: 10px;
+    max-width: 100%;
 }
 
 span {
-  padding: 5px;
+    padding: 5px;
 }
+
+.clear-fix {
+    overflow: auto;
+}
+
+.rwd-xs-break {
+    display: block;
+}
+
+#name {
+    color: #fff;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif !important;
+}
+
+#role {
+    /*    padding: 7px 2% ;*/
+    font: bold 1.6rem "Poiret One", cursive;
+    color: #f5ae23;
+    text-align: center;
+}
+
+#topContacts {
+    text-align: center;
+    width: 100%;
+}
+
+
+.education-entry,
+.work-entry,
+.project-entry,
+.online-entry,
+#onlineCourses {
+    padding-left: 2%;
+}
+
+#workExperience {
+    float: left;
+}
+
+h1 {
+    /*    font-size: 2.5rem;
+    color: #fff;
+    line-height: 48px;*/
+}
+
+.employer {
+    font: bold italic 1.4rem "Poiret One", cursive;
+    margin-bottom: 1%;
+}
+
+.employer,
+.schoolNames {
+    text-align: center;
+}
+
+.workTitle,
+.major {
+    font: bold italic 1rem "Poiret One", cursive;
+}
+
+.major {
+    text-align: center;
+}
+
+.date-text {
+    color: #eb9d05;
+    line-height: 16px;
+    font: bold italic 1.2rem "Cormorant Garamond", serif;
+    /*    margin-bottom: 5%;*/
+}
+
+.location-text {
+    color: #eb9d05;
+    line-height: 16px;
+    font: bold italic 1rem "Cormorant Garamond", serif;
+    margin-bottom: 5%;
+}
+
+.description {
+    font: 1rem "Cormorant Garamond", serif;
+    margin-bottom: 5%;
+}
+
+.description ul {
+    list-style-type: disc;
+}
+
+.description li {
+    margin-bottom: 5%;
+    list-style-type: disc;
+}
+
+.flex-item a {
+    display: initial;
+}
+
+.welcome-message {
+    margin-top: 18px;
+    color: #f3f3f3;
+    line-height: 28px;
+    font: 1rem "Cormorant Garamond", serif;
+    display: none;
+}
+
+#skills-h3 {
+    text-align: center;
+    padding: 10px 0%;
+    font-size: 1.6rem;    
+}
+
+.orange {
+    background-color: #f5ae23;
+}
+
+.orange-text {
+    color: #f5ae23;
+    font: bold 1.4rem "Poiret One", cursive;
+}
+
+h2.orange {
+    font: bold 2rem "Cormorant Garamond", serif;
+}
+
+.white-text {
+    font: bold 1.1rem "Cormorant Garamond", serif;
+    color: #fff;
+}
+
+.onlineSchool {
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.intl {
+  font-family: "Cormorant Garamond", serif;
+}
+
+/*#onlineCourses {
+    padding: 10px 0%
+}*/
+
+.gray {
+    background-color: #f3f3f3;
+    /*    width: 100%;*/
+}
+
+#education h2,
+#workExperience h2,
+#projects h2,
+#onlineCourses h2,
+#mapDiv h2 {
+    font: bold 2.6rem "Cormorant Garamond", serif;
+    color: #005671;
+    line-height: 45px;
+    padding: 33px 5%;
+    text-align: center;
+}
+
+.dark-gray {
+    background-color: #4a4a4a;
+}
+
+.dark-blue {
+    background-color: #001f2e;
+}
+
+.blackFont {
+    color: #000;
+}
+
+
+
+/* TODO: Replace with image later */
+
+#header {
+    background-color: #001f2e;
+}
+
+#projects,
+#education {
+    clear: both;
+}
+
+.schoolNames,
+.onlineSchools {
+    font: bold italic 1rem "Poiret One", cursive;
+    text-align: center;
+}
+
+
+/*#projects p {
+    font: bold italic 1.2rem "Cormorant Garamond", serif;
+}*/
+
+.project-entry .date-text {
+    margin-bottom: 5%;
+}
+
+.projectTitle {
+    font: bold italic 1rem "Poiret One", cursive;
+}
+
+.project-entry img {
+    margin: 0 auto 5% auto;
+    height: 100%;
+}
+
+.employer,
+.workTitle,
+.date-text,
+.location-text,
+.projectTitle {
+    text-align: center;
+}
+
+.flex-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+
+.flex-style {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+}
+
+.center-content {
+    padding: 2.5% 5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#footerContacts a {
+    padding: 6px;
+}
+
+
+.biopic {
+    padding: 27px;
+    max-width: 100%;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footerContacts a:hover:nth-child(1),
+#footerContacts a:hover:nth-child(3) {
+  background-color: #fff;
+}
+
+#footerContacts a:hover:nth-child(2),
+#footerContacts a:hover:nth-child(4) {  
+  background-color: #f5ae23;
+}
+/*
+.education-entry p {
+    font: bold italic 1.2rem "Cormorant Garamond", serif
+}*/
 
 #lets-connect {
-  text-align: center;
+    text-align: center;
+    display: block;
 }
 
-/* Media queries to handle various device widths */
 
-@media only screen and (max-width: 1024px) {
-  #lets-connect {
-    margin-top: 5%;
-  }
-}
-
-@media only screen and (max-width:900px) {
-  .biopic {
-    width: 175px;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  #lets-connect {
-    margin-top: 10%;
-  }
-  .biopic {
-    width: 150px;
-  }
-  .welcome-message {
-    display: none;
-  }
-}
 
 #map {
-  display: block;
-  height: 100%;
-  margin: 0 5%;
+    display: block;
+    height: 100%;
+    margin: 0 5%;
 }
 
 #mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+    height: 582px;
+    max-width: 100%;
+    /*    width: 100%;*/
+    padding-bottom: 5%;
 }
 
-@media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
-    display: block;
+.fa {
+    font-size: 3rem !important;
+}
+
+.fa-twitter-square,
+.fa-linkedin-square {
+    color: #f5ae23;
+}
+
+.fa-github,
+.fa-facebook-official {
+    color: #fff;
+}
+
+
+
+/* Media queries to handle various device widths */
+
+
+/*media screen and (min-width: 540px) {
+  .date-text {
+    float: right;
   }
+  .education- p {
+    display: inline-block;
+  }
+
+}
+
+@media screen and (min-width: 540px) {
+  .location-text {
+    float: right;
+  }
+}
+*/
+
+
+/*@media screen and (min-width: 500px) {
+  .employer {
+    float: left;
+    display: inline-block;
+  }
+  
+  .date-text {
+    display: inline-block;
+    
+  }
+  
+  .workTitle {
+    display: inline-block;
+  }
+
+  .location-text {
+    display: inline-block;
+  }
+  .onlineSchool {
+    display: inline;
+  }
+}*/
+
+
+/*@media screen and (min-width: 800px) {
+    .education-entry p {
+    display: inline;
+  }
+
+  .location-text {
+    float: right;
+  }
+
+}*/
+
+@media screen and (min-width: 563px) {
+    .rwd-xs-break {
+        display: none;
+    }
+}
+
+
+@media screen and (min-width: 668px) {
+    #role {
+        float: right;
+    }
+}
+
+@media screen and (min-width: 563px) and (max-width: 750px) {
+    /*    .flex-style {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }*/
+}
+
+@media only screen and (max-width: 1024px) {
+    #lets-connect {
+        margin-top: 5%;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    #lets-connect {
+        margin-top: 10%;
+    }
+/*    .flex-box {
+        justify-content: normal;
+    }*/
+}
+
+@media screen and (max-width: 574px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .wrapper div:first-child {
+        order: 1;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .biopic {
+        display: block;
+    }
+    .date-text {
+        margin-bottom: 0;
+        font-size: 1.1rem;
+    }
+    #education h2,
+    #workExperience h2,
+    #projects h2,
+    #onlineCourses h2,
+    #mapDiv h2,
+    #workExperience,
+    #projects {
+        text-align: center;
+    }
+    #projects h2 {
+        margin-left: 3%;
+    }
+    .projectTitle {
+        margin-bottom: 5%;
+        font: bold italic 1.4rem "Poiret One", cursive;
+    }
+    .description,
+    .projectTitle {
+        text-align: left;
+    }
+    .education-entry .date-text,
+    .education-entry .location-text {
+        text-align: center;
+    }
+    .online-entry .date-text {
+        text-align: right;
+        padding-right: 16%;
+    }
+    #lets-connect {
+        margin-top: 11%;
+    }
+    .workTitle,
+    .major {
+        margin-bottom: 5%;
+    }
+    .major {
+        text-align: left;
+    }
+    .schoolNames,
+    .onlineSchools {
+        text-align: left;
+        margin-bottom: 1%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .welcome-message {
+        display: block;
+        margin-bottom: 2%;
+    }
+    .flex-box {
+        display: flex;
+        display: -webkit-flex;
+    }
+    .schoolNames,
+    .onlineSchools,
+    .major,
+    .workTitle {
+        font-size: 1.2rem;
+    }
+    h2.orange {
+        font-size: 2.8rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .biopic {
+        width: 450px;
+        height: 100%;
+        padding-left: 10%;
+    }
+    .welcome-message,
+    .white-text {
+        font-size: 1.4rem;
+    }
+    .name {
+        font-size: 3rem;
+    }
+    #role {
+        font-size: 2rem;
+    }
+    #skills-h3 {
+        font-size: 2.2rem;
+        padding: 20px 0;
+    }
+    .date-text,
+    .schoolNames,
+    .onlineSchools,
+    .major,
+    .workTitle,
+    .location-text,
+    .description {
+        font-size: 1.4rem;
+    }
+    .employer,
+    .projectTitle {
+        font-size: 1.8rem;
+    }
+    .fa {
+      font-size: 4rem !important;
+    }
 }

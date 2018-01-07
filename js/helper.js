@@ -12,50 +12,52 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
-var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr>';
+var HTMLheaderName = '<h1 id="name" class="col-12 col-sm-6">%data%</h1>';
+var HTMLheaderRole = '<h2 id="role" class="col-12 col-sm-6">%data%</h2><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="orange-text">email</span><span class="white-text">%data%</span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="orange-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><a href="#">%data%</a></li>';
+var HTMLlinkedIn = '<li class="flex-item"><span class="orange-text">LinkedIn</span><span class="white-text">%data%</span></li>';
 var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
-var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+var HTMLbioPic = '<img src="%data%" class="biopic col-sm-3 col-md-6 col-lg-7">';
+var HTMLwelcomeMsg = '<section class="welcome-message col-12">%data%</section>';
 
-var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
-var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
+var HTMLskillsStart = '<h3 id="skills-h3" class="orange-text col-sm-12">Skills at a Glance</h3><ul id="skills" class="flex-style col-12"></ul>';
+var HTMLskills = '<li class="flex-item"><span class="white-text col-12">%data%</span></li>';
 
-var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' - %data%</a>';
-var HTMLworkDates = '<div class="date-text">%data%</div>';
-var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<p><br>%data%</p>';
+var HTMLworkStart = '<div class="row work-entry"></div>';
+var HTMLworkEmployer = '<p class="employer col-sm-6">%data%</p>';
+var HTMLworkTitle = '<p class="workTitle col-sm-6">%data%</p>';
+var HTMLworkDates = '<p class="date-text col-sm-6">%data%</p>';
+var HTMLworkLocation = '<p class="location-text col-sm-6">%data%</p>';
+var HTMLworkDescription = '<p class="description col-sm-12">%data%</p>';
 
-var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
-var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectStart = '<div class="project-entry row"></div>';
+var HTMLprojectTitle = '<p class="projectTitle col-12 col-sm-6">%data%</p>';
+var HTMLprojectDates = '<p class="date-text col-12 col-sm-6">%data%</p>';
+var HTMLprojectDescription = '<p class="description col-12">%data%</p>';
+var HTMLprojectImage = '<img class="col-12 col-sm-8" src="%data%">';
 
-var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
-var HTMLschoolDates = '<div class="date-text">%data%</div>';
-var HTMLschoolLocation = '<div class="location-text">%data%</div>';
-var HTMLschoolMajor = '<em><br>Major: %data%</em>';
+var HTMLschoolStart = '<div class="education-entry row"></div>';
+var HTMLschoolName = '<p class="schoolNames col-sm-6">%data%</p>';
+var HTMLschoolDegree = '<p>%data%</p>';
+var HTMLschoolDates = '<p class="date-text col-sm-6">%data%</p>';
+var HTMLschoolLocation = '<p class="location-text col-sm-6">%data%</p><br>';
+var HTMLschoolMajor = '<p class="major col-sm-6">Major: %data%</p>';
 
-var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
-var HTMLonlineSchool = ' - %data%</a>';
-var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a href="#">%data%</a>';
+var HTMLonlineStart = '<div class="online-entry row"></div>';
+var HTMLonlineClasses = '<h2 class="gray">Online Classes</h2>';
+var HTMLonlineTitle = '<p class="major col-sm-12">%data%</p>';
+var HTMLonlineSchool = '<p class="onlineSchools col-sm-6"><a class="blackFont" href="#">%data%</a></p>';
+var HTMLonlineDates = '<p class="date-text col-sm-6">%data%</p>';
+var HTMLonlineURL = '<a href="#">%data%</a>';
 
-var internationalizeButton = '<button>Internationalize</button>';
+var internationalizeButton = '<button class="col-12 intl">Internationalize Your Name</button>';
 var googleMap = '<div id="map"></div>';
 
 
@@ -238,12 +240,12 @@ function initializeMap() {
 Uncomment the code below when you're ready to implement a Google Map!
 */
 
-// Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+//Calls the initializeMap() function when the page loads
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
-//window.addEventListener('resize', function(e) {
+window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
-//  map.fitBounds(mapBounds);
-//});
+map.fitBounds(mapBounds);
+});
