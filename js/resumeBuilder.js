@@ -1,8 +1,7 @@
 var bio = {
     "name": "Mahariel Rosario",
     "role": "IT and CS Scholar",
-    "welcomeMessage": 'Computing technology is a major passion of mine and as part of my morning routine, I dedicate at least an hour to learning something new about it. And, that\'s not including time during and after business hours.<br><br> Becoming my greatest version is the goal I\'ve set for myself. My lifestyle involves using creativity to solve technical challenges in front-end web development, IT infrastructure, networking and security, and I gather information quickly, making myself an expert on your problem.<br><br> I commit 100% focus to projects, goals, plans, despite any crisis or present negative situations. Adding to that, I can teach you how to be a pro at most computer software and how to troubleshoot common problems. I\'ve contributed to a Google Tag Manager user guide and taught two people how to use it.<br><br> Personal development is very important to me and even when faced with negativity and overwhelming odds, I foster an "anything is possible" mindset and belief system. That\'s why I take the time to meditate before 6 am. This enables me to provide curated, high-quality content that will inspire and uplift you as well as gives me a bright smile, warmth, and brings positivity to my environment.',
-    "biopic": "images/pro-pic-small.jpg",
+    "welcomeMessage": 'Computing technology is a major passion of mine and as part of my morning routine, I dedicate at least an hour to learning something new about it. And, that\'s not including time during and after business hours.<br><br> Becoming my greatest version is the goal I\'ve set for myself. My lifestyle involves using creativity to solve technical challenges in front-end web development, IT infrastructure, networking and security, and I gather information quickly, making myself an expert on your problem.<br><br> I commit 100% focus to projects, goals, plans, despite any crisis or present negative situations. Adding to that, I can teach you how to be a pro at most computer software and how to troubleshoot common problems. I\'ve contributed to a Google Tag Manager user guide and taught two people how to use it.<br><br> Personal development is very important to me and even when faced with negativity and overwhelming odds, I foster an "anything is possible" mindset and belief system. That\'s why I take the time to meditate before 6 am. This enables me to provide curated, high-quality content that will inspire and uplift you as well as gives me a bright smile, warmth, and brings positivity to my environment.', "biopic": "images/pro-pic-small.jpg",
     "skills": ["HTML5", "CSS3", "JavaScript", "jQuery", "Information Technology", "Git and GitHub", "Data Management", "Responsive Web Design", "GIMP"],
     "contacts": {
         "mobile": "301-367-6178",
@@ -26,8 +25,7 @@ var bio = {
         //var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
         //var formattedLinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedin);
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        //$(".flex-item a").css("display", "none");
-
+        //$(".flex-item a").css("display", "none");s
         $("#footerContacts").append(bio.contacts.linkedin, bio.contacts.github, bio.contacts.twitter, bio.contacts.facebook);
         $("#header").prepend(formattedHTMLheaderName, formattedHTMLheaderRole);
         $("#header").append(formattedBioPic, formattedHTMLwelcomeMsg, HTMLskillsStart);
@@ -37,7 +35,7 @@ var bio = {
             $("#skills:last").append(formattedSkill);
         });
     }
-}
+};
 bio.display();
 var work = {
     "jobs": [{
@@ -64,7 +62,7 @@ var work = {
             $(".work-entry:last").append(formattedEmployer, formattedDates, formattedTitle, formattedLocation, formattedDescripton);
         });
     }
-}
+};
 work.display();
 var projects = {
     "projects": [{
@@ -99,7 +97,7 @@ var projects = {
             $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages);
         });
     }
-}
+};
 projects.display();
 var education = {
     "schools": [{
@@ -144,7 +142,7 @@ var education = {
 
         });
     }
-}
+};
 education.display();
 
 //Shows coorinates of user click in the console
@@ -159,10 +157,10 @@ $(document).click(function(loc) {
 //$("#main").append(internationalizeButton);
 
 function inName(name) {
-    var name = bio.name.trim().split(" ");
-    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
-    name[1] = name[1].toUpperCase();
-    return name[0] + " " + name[1];
+    var intlName = bio.name.trim().split(" ");
+    intlName[0] = intlName[0].slice(0, 1).toUpperCase() + intlName[0].slice(1).toLowerCase();
+    intlName[1] = intlName[1].toUpperCase();
+    return intlName[0] + " " + intlName[1];
 }
 
 $("#mapDiv").append(googleMap);
