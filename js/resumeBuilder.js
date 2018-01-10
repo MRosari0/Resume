@@ -26,14 +26,8 @@ const bio = {
         $("#header").prepend(formattedHTMLheaderName, formattedHTMLheaderRole);
         $("#header").append(formattedBioPic, formattedHTMLwelcomeMsg, HTMLskillsStart);
         $("#topContacts").append(formattedMobile, formattedEmail, formattedLocation);
-        //$(".flex-item a").css("display", "none");
-        //const formattedGithub = HTMLgithub.replace(data, bio.contacts.github);
-        //console.log(formattedGithub);
-        //$(formattedGithub).attr("href").replace("#", "https://github.com/MRosari0/");
-        //const formattedTwitter = HTMLtwitter.replace(data, bio.contacts.twitter);
-        //const formattedLinkedIn = HTMLlinkedIn.replace(data, bio.contacts.linkedin);
-        bio.skills.forEach(function(skill, num) {
-            const formattedSkill = HTMLskills.replace(data, bio.skills[num]);
+        bio.skills.forEach(function(skill) {
+            const formattedSkill = HTMLskills.replace(data, skill);
             $("#skills:last").append(formattedSkill);
         });
     }
@@ -56,13 +50,14 @@ const work = {
         }
     ],
     display: function() {
-        work.jobs.forEach(function(mywork, num) {
+        work.jobs.forEach(function(job) {
             $("#workExperience:last").append(HTMLworkStart);
-            const formattedEmployer = HTMLworkEmployer.replace(data, work.jobs[num].employer);
-            const formattedTitle = HTMLworkTitle.replace(data, work.jobs[num].title);
-            const formattedDates = HTMLworkDates.replace(data, work.jobs[num].dates);
-            const formattedLocation = HTMLworkLocation.replace(data, work.jobs[num].location);
-            const formattedDescripton = HTMLworkDescription.replace(data, work.jobs[num].description);
+            const formattedEmployer = HTMLworkEmployer.replace(data, job.employer);
+            const formattedTitle = HTMLworkTitle.replace(data, job.title);
+            let employerTitle = formattedTitle + formattedEmployer;
+            const formattedDates = HTMLworkDates.replace(data, job.dates);
+            const formattedLocation = HTMLworkLocation.replace(data, job.location);
+            const formattedDescripton = HTMLworkDescription.replace(data, job.description);
             $(".work-entry:last").append(formattedEmployer, formattedDates, formattedTitle, formattedLocation, formattedDescripton);
         });
     }
@@ -95,11 +90,11 @@ const projects = {
         }
     ],
     display: function() {
-        projects.projects.forEach(function(project, num) {
-            const formattedProjectTitle = HTMLprojectTitle.replace(data, projects.projects[num].title);
-            const formattedProjectDates = HTMLprojectDates.replace(data, projects.projects[num].dates);
-            const formattedProjectDescription = HTMLprojectDescription.replace(data, projects.projects[num].description);
-            const formattedProjectImages = HTMLprojectImage.replace(data, projects.projects[num].images);
+        projects.projects.forEach(function(project) {
+            const formattedProjectTitle = HTMLprojectTitle.replace(data, project.title);
+            const formattedProjectDates = HTMLprojectDates.replace(data, project.dates);
+            const formattedProjectDescription = HTMLprojectDescription.replace(data, project.description);
+            const formattedProjectImages = HTMLprojectImage.replace(data, project.images);
             $("#projects").append(HTMLprojectStart);
             $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages);
         });
@@ -119,7 +114,7 @@ let education = {
             "location": "Arlington, VA",
             "degree": "",
             "dates": "January 2015 - July 2015",
-            "majors": ["Professional and Career Development, Business Communications"]
+            "majors": ["Professional and Career Development", " Business Communications"]
         }
     ],
     "onlineCourses": [{
@@ -129,24 +124,20 @@ let education = {
         "url": "https://www.udacity.com/"
     }],
     display: function() {
-        education.schools.forEach(function(school, num) {
-            const formattedSchoolName = HTMLschoolName.replace(data, education.schools[num].name);
-            const formattedSchoolDegree = HTMLschoolDegree.replace(data, education.schools[num].degree);
-            const formattedSchoolDates = HTMLschoolDates.replace(data, education.schools[num].dates);
-            const formattedSchoolLocation = HTMLschoolLocation.replace(data, education.schools[num].location);
-            let formattedSchoolMajor = HTMLschoolMajor.replace(data, education.schools[num].majors);
-            //Not working yet
-            // if (education.schools[num].majors.indexOf(",") === -1) {
-            //     formattedSchoolMajor = formattedSchoolMajor.replace("Majors", "Major");
-            // }
+        education.schools.forEach(function(school) {
+            const formattedSchoolName = HTMLschoolName.replace(data, school.name);
+            const formattedSchoolDegree = HTMLschoolDegree.replace(data, school.degree);
+            const formattedSchoolDates = HTMLschoolDates.replace(data, school.dates);
+            const formattedSchoolLocation = HTMLschoolLocation.replace(data, school.location);
+            const formattedSchoolMajor = HTMLschoolMajor.replace(data, school.majors);
             $("#education").append(HTMLschoolStart);
             $(".education-entry:last").append(formattedSchoolName, formattedSchoolDates, formattedSchoolMajor, formattedSchoolLocation);
         });
         $("#onlineCourses").append(HTMLonlineClasses);
-        education.onlineCourses.forEach(function(onlineSchool, num) {
-            const formattedOnlineSchool = HTMLonlineSchool.replace(data, education.onlineCourses[num].school).replace("#", education.onlineCourses[num].url);
-            const formattedOnlineTitle = HTMLonlineTitle.replace(data, education.onlineCourses[num].title);
-            const formattedOnlineDates = HTMLonlineDates.replace(data, education.onlineCourses[num].dates);
+        education.onlineCourses.forEach(function(onlineCourse) {
+            const formattedOnlineSchool = HTMLonlineSchool.replace(data, onlineCourse.school).replace("#", onlineCourse.url);
+            const formattedOnlineTitle = HTMLonlineTitle.replace(data, onlineCourse.title);
+            const formattedOnlineDates = HTMLonlineDates.replace(data, onlineCourse.dates);
             $("#onlineCourses").append(HTMLonlineStart);
             $(".online-entry:last").append(formattedOnlineSchool, formattedOnlineDates, formattedOnlineTitle);
 
@@ -155,22 +146,43 @@ let education = {
 };
 education.display();
 
-//Shows coorinates of user click in the console
-$(document).click(function(loc) {
-    const x = loc.pageX;
-    const y = loc.pageY;
-    logClicks(x, y);
+$(function() {
+    //Singularization
+    $(".major").text(function(index, text) {
+        if (text.indexOf(',') === -1) {
+            return text.replace("Majors", "Major");
+        }
+    });
+    //Swap element positions
+    if ($(window).width() < 576) {
+        $(".work-entry").each(function(index) {
+            var test = $(this).find($(".workTitle"));
+            var test2 = $(this).find($(".date-text"));
+            test2.before(test);
+        });
+    }
+    //hide empty sections
+    if ($(".flex-item, h1, .work-entry, .project-entry, .education-entry, .online-entry").length === 0) {
+        $(this).css("display", "none");
+    } else if ($("#map") === null) {
+        $("mapDiv").css("display", "none");
+    }
+    //show Google Maps API
+    $("#mapDiv").append(googleMap);
+    //Shows coorinates of user click in the console
+    $(document).click(function(loc) {
+        const x = loc.pageX;
+        const y = loc.pageY;
+        logClicks(x, y);
+    });
+    // //Button that coverts name into international version
+
+    // //$("#main").append(internationalizeButton);
+
+    // function inName(name) {
+    //     let intlName = bio.name.trim().split(" ");
+    //     intlName[0] = intlName[0].slice(0, 1).toUpperCase() + intlName[0].slice(1).toLowerCase();
+    //     intlName[1] = intlName[1].toUpperCase();
+    //     return intlName[0] + " " + intlName[1];
+    // }
 });
-
-//Button that coverts name into international version
-
-//$("#main").append(internationalizeButton);
-
-function inName(name) {
-    let intlName = bio.name.trim().split(" ");
-    intlName[0] = intlName[0].slice(0, 1).toUpperCase() + intlName[0].slice(1).toLowerCase();
-    intlName[1] = intlName[1].toUpperCase();
-    return intlName[0] + " " + intlName[1];
-}
-
-$("#mapDiv").append(googleMap);

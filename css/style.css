@@ -42,12 +42,11 @@ p {
 a {
     color: #005671;
     text-decoration: none;
-    /*    margin-top: 10px;*/
     display: block;
 }
 
 body {
-  background-color: #f4f3f3;
+    background-color: #f4f3f3;
 }
 
 hr {
@@ -79,7 +78,6 @@ span {
 }
 
 #role {
-    /*    padding: 7px 2% ;*/
     font: bold 1.6rem "Poiret One", cursive;
     color: #f5ae23;
     text-align: center;
@@ -91,22 +89,18 @@ span {
 }
 
 
-.education-entry,
-.work-entry,
-.project-entry,
-.online-entry,
-#onlineCourses {
+.work-entry {
     padding-left: 2%;
+}
+
+.education-entry,
+.project-entry,
+#onlineCourses {
+    padding-left: 10%;
 }
 
 #workExperience {
     float: left;
-}
-
-h1 {
-    /*    font-size: 2.5rem;
-    color: #fff;
-    line-height: 48px;*/
 }
 
 .employer {
@@ -132,7 +126,6 @@ h1 {
     color: #eb9d05;
     line-height: 16px;
     font: bold italic 1.2rem "Cormorant Garamond", serif;
-    /*    margin-bottom: 5%;*/
 }
 
 .location-text {
@@ -171,7 +164,7 @@ h1 {
 #skills-h3 {
     text-align: center;
     padding: 10px 0%;
-    font-size: 1.6rem;    
+    font-size: 1.6rem;
 }
 
 .orange {
@@ -198,16 +191,11 @@ h2.orange {
 }
 
 .intl {
-  font-family: "Cormorant Garamond", serif;
+    font-family: "Cormorant Garamond", serif;
 }
-
-/*#onlineCourses {
-    padding: 10px 0%
-}*/
 
 .gray {
     background-color: #f3f3f3;
-    /*    width: 100%;*/
 }
 
 #education h2,
@@ -234,8 +222,6 @@ h2.orange {
     color: #000;
 }
 
-
-
 /* TODO: Replace with image later */
 
 #header {
@@ -252,11 +238,6 @@ h2.orange {
     font: bold italic 1rem "Poiret One", cursive;
     text-align: center;
 }
-
-
-/*#projects p {
-    font: bold italic 1.2rem "Cormorant Garamond", serif;
-}*/
 
 .project-entry .date-text {
     margin-bottom: 5%;
@@ -317,25 +298,18 @@ ul {
 
 #footerContacts a:hover:nth-child(1),
 #footerContacts a:hover:nth-child(3) {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 #footerContacts a:hover:nth-child(2),
-#footerContacts a:hover:nth-child(4) {  
-  background-color: #f5ae23;
+#footerContacts a:hover:nth-child(4) {
+    background-color: #f5ae23;
 }
-/*
-.education-entry p {
-    font: bold italic 1.2rem "Cormorant Garamond", serif
-}*/
 
 #lets-connect {
     text-align: center;
     display: block;
 }
-
-
-
 #map {
     display: block;
     height: 100%;
@@ -345,7 +319,6 @@ ul {
 #mapDiv {
     height: 582px;
     max-width: 100%;
-    /*    width: 100%;*/
     padding-bottom: 5%;
 }
 
@@ -363,64 +336,6 @@ ul {
     color: #fff;
 }
 
-
-
-/* Media queries to handle various device widths */
-
-
-/*media screen and (min-width: 540px) {
-  .date-text {
-    float: right;
-  }
-  .education- p {
-    display: inline-block;
-  }
-
-}
-
-@media screen and (min-width: 540px) {
-  .location-text {
-    float: right;
-  }
-}
-*/
-
-
-/*@media screen and (min-width: 500px) {
-  .employer {
-    float: left;
-    display: inline-block;
-  }
-  
-  .date-text {
-    display: inline-block;
-    
-  }
-  
-  .workTitle {
-    display: inline-block;
-  }
-
-  .location-text {
-    display: inline-block;
-  }
-  .onlineSchool {
-    display: inline;
-  }
-}*/
-
-
-/*@media screen and (min-width: 800px) {
-    .education-entry p {
-    display: inline;
-  }
-
-  .location-text {
-    float: right;
-  }
-
-}*/
-
 @media screen and (min-width: 563px) {
     .rwd-xs-break {
         display: none;
@@ -434,13 +349,6 @@ ul {
     }
 }
 
-@media screen and (min-width: 563px) and (max-width: 750px) {
-    /*    .flex-style {
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }*/
-}
-
 @media only screen and (max-width: 1024px) {
     #lets-connect {
         margin-top: 5%;
@@ -452,9 +360,6 @@ ul {
     #lets-connect {
         margin-top: 10%;
     }
-/*    .flex-box {
-        justify-content: normal;
-    }*/
 }
 
 @media screen and (max-width: 574px) {
@@ -574,6 +479,6 @@ ul {
         font-size: 1.8rem;
     }
     .fa {
-      font-size: 4rem !important;
+        font-size: 4rem !important;
     }
 }

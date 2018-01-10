@@ -40,41 +40,12 @@
     <script src="js/helper.js"></script>
     <script src="js/resumeBuilder.js"></script>
     <script>
-    if (document.getElementsByClassName('flex-item').length === 0) {
-        document.getElementById('topContacts').style.display = 'none';
+
+if ($(".flex-item, h1, .work-entry, .project-entry, .education-entry, .online-entry").length === 0) {
+    $(this).css("display", "none");
+} else if ($("#map") === null) {
+        $("mapDiv").css("display", "none");
     }
-    if (document.getElementsByTagName('h1').length === 0) {
-        document.getElementById('header').style.display = 'none';
-    }
-    if (document.getElementsByClassName('work-entry').length === 0) {
-        document.getElementById('workExperience').style.display = 'none';
-    }
-    if (document.getElementsByClassName('project-entry').length === 0) {
-        document.getElementById('projects').style.display = 'none';
-    }
-    if (document.getElementsByClassName('education-entry').length === 0) {
-        document.getElementById('education').style.display = 'none';
-    }
-    if (document.getElementsByClassName('online-entry').length === 0) {
-        document.getElementById('onlineCourses').style.display = 'none';
-    }
-    if (document.getElementsByClassName('flex-item').length === 0) {
-        document.getElementById('lets-connect').style.display = 'none';
-    }
-    if (document.getElementById('map') === null) {
-        document.getElementById('mapDiv').style.display = 'none';
-    }
-    //switch job title and date positions when on a small device. Not working yet
-    //     $(function() {
-    //     $(window).resize(function() {
-    //         if ($(window).width() < 576) {
-    //             var test = $(".work-entry.row").find($(".workTitle.col-sm-6"));
-    //             var test2 = $(".work-entry.row").find($(".date-text.col-sm-6"));
-    //             test.before(test2);
-    //             console.log("swapped");
-    //         }
-    //     });
-    // });
     </script>
 </body>
 
