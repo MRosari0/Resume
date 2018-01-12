@@ -94,14 +94,17 @@ const projects = {
             const formattedProjectTitle = HTMLprojectTitle.replace(data, project.title);
             const formattedProjectDates = HTMLprojectDates.replace(data, project.dates);
             const formattedProjectDescription = HTMLprojectDescription.replace(data, project.description);
-            const formattedProjectImages = HTMLprojectImage.replace(data, project.images);
             $("#projects").append(HTMLprojectStart);
-            $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription, formattedProjectImages);
+            $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription);
+            project.images.forEach(function(image) {
+                let formattedProjectImages = HTMLprojectImage.replace(data, image);
+                $(".project-entry:last").append(formattedProjectImages);
+            });
         });
     }
 };
 projects.display();
-let education = {
+const education = {
     "schools": [{
             "name": "Northern Virginia Community College",
             "location": "Arlington, VA",
@@ -156,9 +159,9 @@ $(function() {
     //Swap element positions
     if ($(window).width() < 576) {
         $(".work-entry").each(function(index) {
-            var test = $(this).find($(".workTitle"));
-            var test2 = $(this).find($(".date-text"));
-            test2.before(test);
+            const workTitle = $(this).find($(".workTitle"));
+            const dateText = $(this).find($(".date-text"));
+            dateText.before(workTitle);
         });
     }
     //hide empty sections
