@@ -1,4 +1,4 @@
-# Project Details
+# Online Resume
 
 ## Description
 This project is an online resume that is mobile friendly. It uses a JSON object to add content to the HTML rather than hard coding it in.
